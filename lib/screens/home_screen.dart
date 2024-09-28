@@ -1,3 +1,5 @@
+import 'package:ecommerce_mobile_app/widgets/home_appbar.dart';
+import 'package:ecommerce_mobile_app/widgets/search_field.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_mobile_app/constants.dart';
 import 'package:ionicons/ionicons.dart';
@@ -9,33 +11,42 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kscaffoldColor,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              IconButton(
-                onPressed: () {},
-                style: IconButton.styleFrom(
-                  backgroundColor: kcontantColor,
-                  padding: const EdgeInsets.all(15.0),
-                ),
-                icon: const Icon(Ionicons.grid_outline),
-                iconSize: 30,
+              HomeAppbar(),
+              SizedBox(
+                height: 20,
               ),
-              IconButton(
-                onPressed: () {},
-                style: IconButton.styleFrom(
-                  backgroundColor: kcontantColor,
-                  padding: const EdgeInsets.all(15.0),
-                ),
-                icon: const Icon(Ionicons.notifications_outline),
-                iconSize: 30,
+              SearchField(),
+              SizedBox(
+                height: 20,
               ),
+              Stack(
+                children: [
+                  SizedBox(
+                    height: 200,
+                    width: double.infinity,
+                    child: PageView.builder(itemBuilder: (context, index) {
+                      return Container(
+                        height: 200,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assetName'),
+                          ),
+                        ),
+                      );
+                    }),
+                  )
+                ],
+              )
             ],
           ),
-        ],
+        ),
       ),
     );
   }
