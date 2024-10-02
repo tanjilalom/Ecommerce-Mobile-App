@@ -39,7 +39,7 @@ final List<Product> products = [
     price: 120,
     colors: [Colors.brown.shade200, Colors.red, Colors.pink],
     category: 'Woman Fashion',
-    rate: 4.8,
+    rate: 4.5,
   ),
   Product(
     title: 'Smart Watch',
@@ -51,6 +51,6 @@ final List<Product> products = [
       Colors.black,
     ],
     category: 'Watch',
-    rate: 4.8,
+    rate: 4.9,
   ),
 ];

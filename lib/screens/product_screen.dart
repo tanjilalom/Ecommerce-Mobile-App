@@ -1,9 +1,9 @@
 import 'package:ecommerce_mobile_app/constants.dart';
 import 'package:ecommerce_mobile_app/models/products.dart';
 import 'package:ecommerce_mobile_app/widgets/product_widgets/image_slider.dart';
+import 'package:ecommerce_mobile_app/widgets/product_widgets/information.dart';
 import 'package:ecommerce_mobile_app/widgets/product_widgets/product_appbar.dart';
 import 'package:flutter/material.dart';
-import 'package:ionicons/ionicons.dart';
 
 class ProductScreen extends StatefulWidget {
   const ProductScreen({super.key, required this.product});
@@ -68,60 +68,26 @@ class _ProductScreenState extends State<ProductScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    widget.product.title,
-                    style: const TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
+                  ProductInfo(product: widget.product),
+                  const Text(
+                    'Color',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 13,
                     ),
                   ),
+                  SizedBox(height: 10),
                   Row(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "\$${widget.product.price}",
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 22,
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              Container(
-                                width: 50,
-                                height: 22,
-                                decoration: BoxDecoration(
-                                  color: kprimaryColor,
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 5),
-                                child: Row(
-                                  children: [
-                                    const Icon(
-                                      Ionicons.star,
-                                      size: 13,
-                                      color: Colors.white,
-                                    ),
-                                    const SizedBox(
-                                      width: 3,
-                                    ),
-                                    Text(
-                                      widget.product.rate.toString(),
-                                      style: const TextStyle(
-                                          color: Colors.white, fontSize: 13),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const Text('(320 Reviews)')
-                            ],
-                          )
-                        ],
-                      )
-                    ],
+                    children: List.generate(widget.product.colors.[index], (index) => Container(
+                      width: 30,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: widget.product.colors[index],
+                      ),
+                      margin: EdgeInsets.only(right: 20),
+                      child: Container(),
+                    )),
                   )
                 ],
               ),
