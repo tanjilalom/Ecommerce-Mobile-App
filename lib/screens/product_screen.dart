@@ -76,7 +76,7 @@ class _ProductScreenState extends State<ProductScreen> {
                       fontSize: 13,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Row(
                     children: List.generate(widget.product.colors.[index], (index) => Container(
                       width: 30,
