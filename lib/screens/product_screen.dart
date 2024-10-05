@@ -85,7 +85,7 @@ class _ProductScreenState extends State<ProductScreen> {
                         shape: BoxShape.circle,
                         color: widget.product.colors[index],
                       ),
-                      margin: EdgeInsets.only(right: 20),
+                      margin: const EdgeInsets.only(right: 20),
                       child: Container(),
                     )),
                   )
