@@ -16,6 +16,7 @@ class ProductScreen extends StatefulWidget {
 
 class _ProductScreenState extends State<ProductScreen> {
   int currentImage = 0;
+  int currentColor = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -69,25 +70,70 @@ class _ProductScreenState extends State<ProductScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ProductInfo(product: widget.product),
+                  SizedBox(height: 20),
                   const Text(
                     'Color',
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 13,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
                     ),
                   ),
                   const SizedBox(height: 10),
                   Row(
-                    children: List.generate(widget.product.colors.[index], (index) => Container(
-                      width: 30,
-                      height: 30,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: widget.product.colors[index],
+                    children: List.generate(
+                      widget.product.colors.length,
+                      (index) => GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            currentColor = index;
+                          });
+                        },
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 300),
+                          width: 35,
+                          height: 35,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: currentColor == index
+                                ? Colors.white
+                                : widget.product.colors[index],
+                            border: currentColor == index
+                                ? Border.all(
+                                    color: widget.product.colors[index])
+                                : null,
+                          ),
+                          padding: currentColor == index
+                              ? const EdgeInsets.all(2)
+                              : null,
+                          margin: const EdgeInsets.only(right: 15),
+                          child: Container(
+                            height: 30,
+                            width: 30,
+                            decoration: BoxDecoration(
+                              color: widget.product.colors[index],
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                        ),
                       ),
-                      margin: const EdgeInsets.only(right: 20),
-                      child: Container(),
-                    )),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Container(
+                    height: 38,
+                    width: 110,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: kprimaryColor,
+                    ),
+                    alignment: Alignment.center,
+                    child: const Text(
+                      'Description',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   )
                 ],
               ),
