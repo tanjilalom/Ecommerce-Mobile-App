@@ -5,6 +5,7 @@ import 'package:ecommerce_mobile_app/widgets/product_widgets/information.dart';
 import 'package:ecommerce_mobile_app/widgets/product_widgets/product_appbar.dart';
 import 'package:ecommerce_mobile_app/widgets/product_widgets/product_description.dart';
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 
 class ProductScreen extends StatefulWidget {
   const ProductScreen({super.key, required this.product});
@@ -18,31 +19,13 @@ class ProductScreen extends StatefulWidget {
 class _ProductScreenState extends State<ProductScreen> {
   int currentImage = 0;
   int currentColor = 0;
+  int currentNumber = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kcontantColor,
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Container(
-          height: 80,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50),
-            color: Colors.black
-          ),
-          padding: EdgeInsets.symmetric(horizontal: 15),
-          alignment: Alignment.center,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                height: 40,
-              )
-            ],
-          ),
-        ),
-      ),
+      floatingActionButton: AddToCard(currentNumber: currentNumber),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -142,7 +125,9 @@ class _ProductScreenState extends State<ProductScreen> {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    ProductDescription(text: widget.product.description,),
+                    ProductDescription(
+                      text: widget.product.description,
+                    ),
                   ],
                 ),
               )
@@ -153,3 +138,4 @@ class _ProductScreenState extends State<ProductScreen> {
     );
   }
 }
+
