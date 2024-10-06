@@ -1,5 +1,6 @@
 import 'package:ecommerce_mobile_app/constants.dart';
 import 'package:ecommerce_mobile_app/models/products.dart';
+import 'package:ecommerce_mobile_app/widgets/product_widgets/add_to_cart.dart';
 import 'package:ecommerce_mobile_app/widgets/product_widgets/image_slider.dart';
 import 'package:ecommerce_mobile_app/widgets/product_widgets/information.dart';
 import 'package:ecommerce_mobile_app/widgets/product_widgets/product_appbar.dart';
@@ -25,7 +26,21 @@ class _ProductScreenState extends State<ProductScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kcontantColor,
-      floatingActionButton: AddToCard(currentNumber: currentNumber),
+      floatingActionButton: AddToCard(
+        currentNumber: currentNumber,
+        onAdd: () {
+          setState(() {
+            currentNumber++;
+          });
+        },
+        onRemove: () {
+          if (currentNumber != 0) {
+            setState(() {
+              currentNumber--;
+            });
+          }
+        },
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -71,7 +86,12 @@ class _ProductScreenState extends State<ProductScreen> {
                   ),
                   color: Colors.white,
                 ),
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.only(
+                  left: 20,
+                  right: 20,
+                  top: 20,
+                  bottom: 100,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -138,4 +158,3 @@ class _ProductScreenState extends State<ProductScreen> {
     );
   }
 }
-

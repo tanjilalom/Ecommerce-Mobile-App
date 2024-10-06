@@ -5,10 +5,12 @@ import 'package:ionicons/ionicons.dart';
 class AddToCard extends StatelessWidget {
   const AddToCard({
     super.key,
-    required this.currentNumber,
+    required this.currentNumber, required this.onAdd, required this.onRemove,
   });
 
   final int currentNumber;
+  final Function() onAdd;
+  final Function() onRemove;
 
   @override
   Widget build(BuildContext context) {
@@ -35,23 +37,23 @@ class AddToCard extends StatelessWidget {
               child: Row(
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: onRemove,
                     iconSize: 18,
                     icon: const Icon(
                       Ionicons.remove_outline,
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   Text(
                     currentNumber.toString(),
                     style: const TextStyle(color: Colors.white),
                   ),
-                  SizedBox(width: 5),
+                  const SizedBox(width: 5),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: onAdd,
                     iconSize: 18,
-                    icon: Icon(Ionicons.add_outline),
+                    icon: const Icon(Ionicons.add_outline),
                   ),
                 ],
               ),
@@ -63,8 +65,8 @@ class AddToCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(60),
               ),
               alignment: Alignment.center,
-              padding: EdgeInsets.symmetric(horizontal: 40),
-              child: Text(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: const Text(
                 "Add to Cart",
                 style: TextStyle(
                     color: Colors.white,
