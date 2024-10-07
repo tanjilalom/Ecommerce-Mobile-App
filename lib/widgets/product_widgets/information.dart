@@ -42,8 +42,7 @@ class ProductInfo extends StatelessWidget {
                         color: kprimaryColor,
                         borderRadius: BorderRadius.circular(15),
                       ),
-                      padding:
-                      const EdgeInsets.symmetric(horizontal: 5),
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
                       child: Row(
                         children: [
                           const Icon(
