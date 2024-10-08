@@ -1,4 +1,3 @@
-import 'package:ecommerce_mobile_app/screens/home_screen.dart';
 import 'package:ecommerce_mobile_app/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 

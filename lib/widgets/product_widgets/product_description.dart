@@ -1,9 +1,11 @@
 import 'package:ecommerce_mobile_app/constants.dart';
-import 'package:ecommerce_mobile_app/models/products.dart';
 import 'package:flutter/material.dart';
 
 class ProductDescription extends StatelessWidget {
-  const ProductDescription({super.key, required this.text, });
+  const ProductDescription({
+    super.key,
+    required this.text,
+  });
 
   final String text;
 

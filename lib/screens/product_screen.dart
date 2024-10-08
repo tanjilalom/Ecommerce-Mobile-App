@@ -6,7 +6,6 @@ import 'package:ecommerce_mobile_app/widgets/product_widgets/information.dart';
 import 'package:ecommerce_mobile_app/widgets/product_widgets/product_appbar.dart';
 import 'package:ecommerce_mobile_app/widgets/product_widgets/product_description.dart';
 import 'package:flutter/material.dart';
-import 'package:ionicons/ionicons.dart';
 
 class ProductScreen extends StatefulWidget {
   const ProductScreen({super.key, required this.product});

@@ -25,7 +25,10 @@ class HomeAppbar extends StatelessWidget {
             backgroundColor: kcontantColor,
             padding: const EdgeInsets.all(15.0),
           ),
-          icon: const Icon(Ionicons.notifications_outline),
+          icon: Badge.count(
+            count: 5,
+            child: const Icon(Ionicons.notifications_outline),
+          ),
           iconSize: 30,
         ),
       ],

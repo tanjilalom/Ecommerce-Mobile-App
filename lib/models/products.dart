@@ -28,7 +28,7 @@ final List<Product> products = [
     image: 'assets/images/wireless.png',
     price: 210,
     colors: [Colors.black, Colors.blue, Colors.orange],
-    category: 'Woman Fashion',
+    category: 'Electronics',
     rate: 4.8,
   ),
   Product(
@@ -50,7 +50,7 @@ final List<Product> products = [
     colors: [
       Colors.black,
     ],
-    category: 'Watch',
+    category: 'Electronics',
     rate: 4.9,
   ),
 ];

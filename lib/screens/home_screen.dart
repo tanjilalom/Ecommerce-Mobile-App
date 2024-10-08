@@ -5,10 +5,8 @@ import 'package:ecommerce_mobile_app/widgets/home_appbar.dart';
 import 'package:ecommerce_mobile_app/widgets/home_slider.dart';
 import 'package:ecommerce_mobile_app/widgets/products_card.dart';
 import 'package:ecommerce_mobile_app/widgets/search_field.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_mobile_app/constants.dart';
-import 'package:ionicons/ionicons.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

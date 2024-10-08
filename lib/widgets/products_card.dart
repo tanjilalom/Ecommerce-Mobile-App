@@ -36,7 +36,7 @@ class ProductsCard extends StatelessWidget {
                 ),
                 Text(
                   product.title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
@@ -46,7 +46,7 @@ class ProductsCard extends StatelessWidget {
                   children: [
                     Text(
                       "\$${product.price}",
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
                       ),
@@ -76,14 +76,14 @@ class ProductsCard extends StatelessWidget {
               child: Container(
                 width: 30,
                 height: 30,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: kprimaryColor,
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(20),
                     bottomLeft: Radius.circular(10),
                   ),
                 ),
-                child: Icon(
+                child: const Icon(
                   Ionicons.heart_outline,
                   color: Colors.white,
                   size: 18,
