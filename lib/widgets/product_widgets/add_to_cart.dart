@@ -5,7 +5,9 @@ import 'package:ionicons/ionicons.dart';
 class AddToCard extends StatelessWidget {
   const AddToCard({
     super.key,
-    required this.currentNumber, required this.onAdd, required this.onRemove,
+    required this.currentNumber,
+    required this.onAdd,
+    required this.onRemove,
   });
 
   final int currentNumber;
@@ -19,8 +21,10 @@ class AddToCard extends StatelessWidget {
       child: Container(
         height: 80,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50), color: Colors.black),
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+          borderRadius: BorderRadius.circular(50),
+          color: Colors.black,
+        ),
+        padding: const EdgeInsets.only(left: 20, right: 10),
         alignment: Alignment.center,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -47,13 +51,17 @@ class AddToCard extends StatelessWidget {
                   const SizedBox(width: 5),
                   Text(
                     currentNumber.toString(),
-                    style: const TextStyle(color: Colors.white),
+                    style: const TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                   const SizedBox(width: 5),
                   IconButton(
                     onPressed: onAdd,
                     iconSize: 18,
-                    icon: const Icon(Ionicons.add_outline),
+                    icon: const Icon(
+                      Ionicons.add_outline,
+                    ),
                   ),
                 ],
               ),
@@ -69,9 +77,10 @@ class AddToCard extends StatelessWidget {
               child: const Text(
                 "Add to Cart",
                 style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18),
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
               ),
             )
           ],
