@@ -1,5 +1,7 @@
 # ecommerce_mobile_app
 
+[![Stand With Palestine](https://raw.githubusercontent.com/TheBSD/StandWithPalestine/main/banner-no-action.svg)](https://thebsd.github.io/StandWithPalestine)
+
 A new Flutter project.
 
 ## Getting Started
